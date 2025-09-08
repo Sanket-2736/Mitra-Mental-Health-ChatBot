@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./public/logo192.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="description" content="Mitra - Your AI-powered mental health companion providing 24/7 support, crisis detection, and personalized care." />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mitra-mental-health.com/" />
+    <meta property="og:title" content="Mitra - Mental Health AI Companion" />
+    <meta property="og:description" content="Get 24/7 mental health support with AI-powered conversations, crisis detection, and professional resources." />
+    <meta property="og:image" content="/logo192.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://mitra-mental-health.com/" />
+    <meta property="twitter:title" content="Mitra - Mental Health AI Companion" />
+    <meta property="twitter:description" content="Get 24/7 mental health support with AI-powered conversations, crisis detection, and professional resources." />
+    <meta property="twitter:image" content="/logo192.png" />
+
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Preconnect to improve performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN for development -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <title>Mitra - Mental Health AI Companion</title>
+    
+    <style>
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      /* Loading screen */
+      .initial-loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+      }
+      
+      .loading-heart {
+        width: 48px;
+        height: 48px;
+        color: #3b82f6;
+        animation: pulse 2s infinite;
+      }
+      
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <!-- Initial loading screen -->
+      <div class="initial-loading">
+        <div class="text-center">
+          <svg class="loading-heart mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <h1 class="text-2xl font-bold text-gray-900 mb-2">Mitra</h1>
+          <p class="text-gray-600">Loading your mental health companion...</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Crisis hotline information - always available -->
+    <div id="crisis-info" style="position: fixed; bottom: -100%; left: 0; right: 0; background: #dc2626; color: white; padding: 8px; text-align: center; font-size: 12px; z-index: 10000; transition: bottom 0.3s ease;">
+      <strong>Crisis Support:</strong> US: 988 | Emergency: 911 | 
+      <button onclick="document.getElementById('crisis-info').style.bottom='-100%'" style="background: none; border: none; color: white; margin-left: 10px;">✕</button>
+    </div>
+
+    <script type="module" src="./src/main.jsx"></script>
+    
+    <script>
+      // Show crisis info on certain conditions
+      if (localStorage.getItem('show-crisis-info') === 'true') {
+        setTimeout(() => {
+          document.getElementById('crisis-info').style.bottom = '0';
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>

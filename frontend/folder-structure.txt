@@ -1,0 +1,107 @@
+mitra-frontend/
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   └── logo192.png
+│
+├── src/
+│   ├── components/
+│   │   ├── Auth/
+│   │   │   ├── Login.jsx
+│   │   │   └── Register.jsx
+│   │   ├── Chat/
+│   │   │   ├── ChatBox.jsx
+│   │   │   ├── MessageBubble.jsx
+│   │   │   └── MessageInput.jsx
+│   │   ├── Dashboard/
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── MoodChart.jsx
+│   │   │   └── SessionHistory.jsx
+│   │   ├── Crisis/
+│   │   │   ├── CrisisAlert.jsx
+│   │   │   └── Resources.jsx
+│   │   └── Common/
+│   │       ├── Header.jsx
+│   │       ├── Sidebar.jsx
+│   │       ├── Loading.jsx
+│   │       └── Button.jsx
+│   │
+│   ├── pages/
+│   │   ├── HomePage.jsx
+│   │   ├── LoginPage.jsx
+│   │   ├── ChatPage.jsx
+│   │   ├── DashboardPage.jsx
+│   │   └── ProfilePage.jsx
+│   │
+│   ├── services/
+│   │   ├── api.js           // All API calls
+│   │   ├── auth.js          // Authentication logic
+│   │   └── websocket.js     // Real-time chat
+│   │
+│   ├── context/
+│   │   ├── AuthContext.js   // User authentication state
+│   │   └── ChatContext.js   // Chat state management
+│   │
+│   ├── hooks/
+│   │   ├── useAuth.js       // Authentication hook
+│   │   └── useChat.js       // Chat functionality hook
+│   │
+│   ├── utils/
+│   │   ├── constants.js     // API URLs, crisis keywords
+│   │   ├── helpers.js       // Utility functions
+│   │   └── formatters.js    // Date/time formatting
+│   │
+│   ├── styles/
+│   │   ├── globals.css      // Global styles
+│   │   ├── components.css   // Component styles
+│   │   └── pages.css        // Page-specific styles
+│   │
+│   ├── App.js               // Main app component
+│   ├── App.css              // App styles
+│   └── index.js             // Entry point
+│
+├── package.json
+├── .env                     // Environment variables
+├── .gitignore
+└── README.md
+
+// Key Dependencies (package.json)
+{
+  "name": "mitra-frontend",
+  "version": "0.1.0",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.0",
+    "axios": "^1.3.0",
+    "socket.io-client": "^4.6.0",
+    "recharts": "^2.5.0",
+    "@heroicons/react": "^2.0.16"
+  }
+}
+
+// Essential Pages Only:
+// 1. HomePage - Landing/Welcome
+// 2. LoginPage - Authentication
+// 3. ChatPage - Main chat interface
+// 4. DashboardPage - Basic analytics
+// 5. ProfilePage - User settings
+
+// Essential Components Only:
+// 1. Chat Components - Core functionality
+// 2. Auth Components - Login/Register
+// 3. Dashboard Components - Simple charts
+// 4. Crisis Components - Safety features
+// 5. Common Components - Reusable UI
+
+// Focus Areas for 24hr Hackathon:
+// ✅ Working chat interface
+// ✅ User authentication
+// ✅ Crisis detection & alerts
+// ✅ Basic mood tracking
+// ✅ Simple dashboard
+// ✅ Responsive design
+// ❌ Skip: Complex animations
+// ❌ Skip: Advanced analytics
+// ❌ Skip: Multiple themes
+// ❌ Skip: Offline functionality
