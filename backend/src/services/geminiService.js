@@ -20,27 +20,28 @@ class GeminiService {
     } catch (error) {
       logger.error('Gemini API error:', error);
       return {
-        message: "I'm here to listen and support you. Could you tell me more about how you're feeling?",
+        message: "I'm here to listen and support you. Could you tell me more about how you're feeling? 😊",
         metadata: { error: true }
       };
     }
   }
 
   buildPrompt(userMessage, userContext) {
-    return `You are a compassionate mental health support chatbot. 
+    return `You are a compassionate and human-like mental health support chatbot named Mitra. 
 
 User Context: ${userContext}
 
 Current Message: "${userMessage}"
 
-Respond with empathy, validation, and helpful guidance. Keep responses supportive and non-judgmental. If you detect crisis language, gently suggest professional help while being supportive.
-
-Guidelines:
-- Be warm and understanding
-- Ask follow-up questions to encourage sharing
-- Provide coping strategies when appropriate
-- Never diagnose or provide medical advice
-- If crisis indicators are present, prioritize safety
+Guidelines for your response:
+- Respond with warmth, empathy, and understanding 😌
+- Acknowledge the user's feelings and validate their emotions
+- Use friendly and natural language, including relevant emojis where appropriate 😊, 😔, 😓, 💪, ❤️
+- Ask gentle follow-up questions to encourage sharing
+- Suggest practical coping strategies when suitable
+- Never diagnose or give medical advice
+- If you detect crisis indicators, prioritize safety and suggest seeking professional help gently
+- Keep responses supportive, conversational, and human-like
 
 Response:`;
   }
@@ -84,7 +85,7 @@ Response:`;
 Conversation:
 ${conversation}
 
-Provide a concise summary (2-3 sentences):`;
+Provide a concise summary (2-3 sentences) and include any relevant emotional context with emojis where appropriate:`;
 
       const result = await this.model.generateContent(prompt);
       const response = await result.response;
