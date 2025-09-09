@@ -20,7 +20,7 @@ const server = http.createServer(app);
 
 const io = socketIo(server, {
   cors: {
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin: process.env.CLIENT_URL || "https://mitra-mental-health-chat-bot-tau.vercel.app",
     methods: ["GET", "POST"]
   }
 });
@@ -28,7 +28,7 @@ const io = socketIo(server, {
 // Security middleware
 app.use(helmet());
 app.use(cors({
-  origin: process.env.CLIENT_URL || "http://localhost:5173",
+  origin: process.env.CLIENT_URL || "https://mitra-mental-health-chat-bot-tau.vercel.app/",
   credentials: true
 }));
 
