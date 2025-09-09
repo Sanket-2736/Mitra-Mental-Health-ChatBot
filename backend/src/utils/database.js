@@ -10,6 +10,7 @@ const connectDB = async () => {
     });
 
     logger.info(`MongoDB connected: ${conn.connection.host}`);
+    logger.info(`Client URL: ${process.env.CLIENT_URL}`);
   } catch (error) {
     logger.error('Database connection failed:', error);
     process.exit(1);
