@@ -28,7 +28,7 @@ const io = socketIo(server, {
 // Security middleware
 app.use(helmet());
 app.use(cors({
-  origin: process.env.CLIENT_URL || "https://mitra-mental-health-chat-bot-tau.vercel.app/",
+  origin: process.env.CLIENT_URL || "https://mitra-mental-health-chat-bot-tau.vercel.app",
   credentials: true
 }));
 
